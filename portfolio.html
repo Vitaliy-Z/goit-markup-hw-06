@@ -331,6 +331,21 @@
           <!-- Форма на рассылку -->
           <div class="mailing">
             <b class="text-title">Подпишитесь на рассылку</b>
+            <form class="js-speaker-form">
+              <input
+                type="email"
+                name="E-mail"
+                placeholder="E-mail"
+                autocomplete="email"
+                class="input"
+              />
+              <button type="submit" class="btn-submit">
+                Подписаться
+                <svg class="icon">
+                  <use href="./img/sprite.svg#icon-mailing"></use>
+                </svg>
+              </button>
+            </form>
           </div>
         </div>
         <div class="copyright">
@@ -338,5 +353,22 @@
         </div>
       </div>
     </footer>
+
+    <!-- Скрипт для отправки формы -->
+    <script>
+      (() => {
+        document
+          .querySelector(".js-speaker-form")
+          .addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            new FormData(e.currentTarget).forEach((value, name) =>
+              console.log(`${name}: ${value}`)
+            );
+
+            e.currentTarget.reset();
+          });
+      })();
+    </script>
   </body>
 </html>

@@ -432,6 +432,47 @@ body {
   width: 570px;
 }
 
+.mailing .js-speaker-form {
+  display: flex;
+}
+
+.mailing .input {
+  width: 358px;
+  height: 50px;
+  margin-right: 12px;
+
+  background-color: #2f303a;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+}
+
+.mailing .btn-submit {
+  display: flex;
+  justify-content: center;
+  width: 200px;
+  padding: 10px 0;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1.7;
+  letter-spacing: 0.06em;
+  color: #ffffff;
+
+  background: #2196f3;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+}
+
+.mailing .icon {
+  width: 24px;
+  height: 24px;
+  margin-left: 10px;
+}
+
 .copyright {
   padding-top: 18px;
   padding-bottom: 21px;

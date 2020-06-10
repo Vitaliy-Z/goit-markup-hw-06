@@ -58,7 +58,7 @@
       <section class="hero">
         <div class="container">
           <h1 class="hero-text">эффективные решения для вашего бизнеса</h1>
-          <input type="button" value="Заказать услугу" class="button" />
+          <button class="button" data-open-modal>Заказать услугу</button>
         </div>
       </section>
       <!-- Наши преимущества -->
@@ -426,6 +426,21 @@
           <!-- Форма на рассылку -->
           <div class="mailing">
             <b class="text-title">Подпишитесь на рассылку</b>
+            <form class="js-speaker-form">
+              <input
+                type="email"
+                name="E-mail"
+                placeholder="E-mail"
+                autocomplete="email"
+                class="input"
+              />
+              <button type="submit" class="btn-submit">
+                Подписаться
+                <svg class="icon">
+                  <use href="./img/sprite.svg#icon-mailing"></use>
+                </svg>
+              </button>
+            </form>
           </div>
         </div>
         <div class="copyright">
@@ -433,5 +448,110 @@
         </div>
       </div>
     </footer>
+
+    <!-- Модалка -->
+    <div class="backdrop is-hidden" data-backdrop>
+      <div class="modal">
+        <b>Оставьте свои данные, мы вам перезвоним</b>
+        <form class="js-speaker-form" autocomplete="off">
+          <ul class="form">
+            <li class="item">
+              <label for="name">Имя</label>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                autocomplete="name"
+                class="input"
+              />
+            </li>
+            <li class="item">
+              <label for="tel">Телефон</label>
+              <input
+                type="tel"
+                name="tel"
+                id="tel"
+                autocomplete="tel"
+                class="input"
+              />
+            </li>
+            <li class="item">
+              <label for="email">Почта</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                autocomplete="email"
+                class="input"
+              />
+            </li>
+            <li class="item">
+              <textarea name="coment" class="input coment">
+Комментарий</textarea
+              >
+            </li>
+            <li class="item">
+              <input
+                type="checkbox"
+                name="consent"
+                value="consent"
+                id="consent"
+              />
+              <label for="consent"
+                >Соглашаюсь с рассылкой и принимаю
+                <a href="">Условия договора</a>
+              </label>
+            </li>
+            <li>
+              <button type="submit" class="btn-submit">Отправить</button>
+            </li>
+          </ul>
+        </form>
+        <button data-close-modal class="btn-close">
+          <svg class="icon">
+            <use href="./img/sprite.svg#icon-close"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Скрипт для модалки -->
+    <script>
+      const refs = {
+        openModalBtn: document.querySelector("[data-open-modal]"),
+        closeModalBtn: document.querySelector("[data-close-modal]"),
+        backdrop: document.querySelector("[data-backdrop]"),
+      };
+
+      refs.openModalBtn.addEventListener("click", toggleModal);
+      refs.closeModalBtn.addEventListener("click", toggleModal);
+
+      refs.backdrop.addEventListener("click", logBackdropClick);
+
+      function toggleModal() {
+        refs.backdrop.classList.toggle("is-hidden");
+      }
+
+      function logBackdropClick() {
+        console.log("Это клик в бекдроп");
+      }
+    </script>
+
+    <!-- Скрипт для отправки формы -->
+    <script>
+      (() => {
+        document
+          .querySelector(".js-speaker-form")
+          .addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            new FormData(e.currentTarget).forEach((value, name) =>
+              console.log(`${name}: ${value}`)
+            );
+
+            e.currentTarget.reset();
+          });
+      })();
+    </script>
   </body>
 </html>

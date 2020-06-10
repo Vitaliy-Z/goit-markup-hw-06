@@ -59,7 +59,9 @@ body {
 .social > ul,
 .footer .logo,
 .footer .test-title,
-.copyright p {
+.copyright p,
+.form,
+.form .item {
   margin: 0px;
   padding: 0px;
 }
@@ -602,6 +604,47 @@ body {
   width: 570px;
 }
 
+.mailing .js-speaker-form {
+  display: flex;
+}
+
+.mailing .input {
+  width: 358px;
+  height: 50px;
+  margin-right: 12px;
+
+  background-color: #2f303a;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+}
+
+.mailing .btn-submit {
+  display: flex;
+  justify-content: center;
+  width: 200px;
+  padding: 10px 0;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1.7;
+  letter-spacing: 0.06em;
+  color: #ffffff;
+
+  background: #2196f3;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+}
+
+.mailing .icon {
+  width: 24px;
+  height: 24px;
+  margin-left: 10px;
+}
+
 .copyright {
   padding-top: 18px;
   padding-bottom: 21px;
@@ -613,4 +656,113 @@ body {
   color: rgba(255, 255, 255, 0.4);
 
   border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Модалка */
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  outline: 2px solid red;
+  padding: 40px;
+  min-width: 528px;
+  min-height: 581px;
+
+  background-color: #fff;
+}
+
+.modal .btn-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
+
+  width: 30px;
+  height: 30px;
+
+  color: #000;
+  background: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.modal .icon {
+  width: 11px;
+  height: 11px;
+  fill: currentColor;
+}
+
+.modal .js-speaker-form {
+  text-align: center;
+}
+
+.form {
+  list-style: none;
+}
+
+.form .item:not(:last-child) {
+  margin-bottom: 28px;
+}
+
+.form .item {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.01em;
+
+  color: #212121;
+}
+
+.form .input {
+  width: 448px;
+  height: 40px;
+  padding: 12px 44px 12px 16px;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+.form .coment {
+  height: 120px;
+  resize: none;
+}
+
+.form .btn-submit {
+  width: 200px;
+  padding: 10px 0;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1.7;
+  letter-spacing: 0.06em;
+
+  color: var(--primary-white-color);
+  background: var(--accent-text-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
 }
