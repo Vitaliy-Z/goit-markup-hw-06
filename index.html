@@ -452,65 +452,81 @@
     <!-- Модалка -->
     <div class="backdrop is-hidden" data-backdrop>
       <div class="modal">
-        <b>Оставьте свои данные, мы вам перезвоним</b>
+        <b class="text-title">Оставьте свои данные, мы вам перезвоним</b>
         <form class="js-speaker-form" autocomplete="off">
           <ul class="form">
             <li class="item">
-              <label for="name">Имя</label>
               <input
                 type="text"
                 name="name"
                 id="name"
                 autocomplete="name"
+                placeholder=" "
                 class="input"
               />
+              <label for="name" class="lable">Имя</label>
+              <svg class="icon">
+                <use href="./img/sprite.svg#icon-m-name"></use>
+              </svg>
             </li>
             <li class="item">
-              <label for="tel">Телефон</label>
               <input
                 type="tel"
                 name="tel"
                 id="tel"
                 autocomplete="tel"
+                placeholder=" "
                 class="input"
               />
+              <label for="tel" class="lable">Телефон</label>
+              <svg class="icon">
+                <use href="./img/sprite.svg#icon-m-tel"></use>
+              </svg>
             </li>
             <li class="item">
-              <label for="email">Почта</label>
               <input
                 type="email"
                 name="email"
                 id="email"
                 autocomplete="email"
+                placeholder=" "
                 class="input"
               />
+              <label for="email" class="lable">Почта</label>
+              <svg class="icon">
+                <use href="./img/sprite.svg#icon-m-mail"></use>
+              </svg>
             </li>
             <li class="item">
-              <textarea name="coment" class="input coment">
-Комментарий</textarea
-              >
-            </li>
-            <li class="item">
-              <input
-                type="checkbox"
-                name="consent"
-                value="consent"
-                id="consent"
-              />
-              <label for="consent"
-                >Соглашаюсь с рассылкой и принимаю
-                <a href="">Условия договора</a>
-              </label>
-            </li>
-            <li>
-              <button type="submit" class="btn-submit">Отправить</button>
+              <textarea
+                name="coment"
+                class="input coment"
+                id="coment"
+                placeholder=" "
+              ></textarea>
+              <label for="voment" class="coment-lable">Комментарий</label>
             </li>
           </ul>
+          <label for="consent" class="consent">
+            <input
+              type="checkbox"
+              name="consent"
+              value="consent"
+              id="consent"
+              class="checkbox"
+            />
+            <span class="checkbox-icon"></span>
+            <span class="label"
+              >Соглашаюсь с рассылкой и принимаю
+              <a href="" class="contract">Условия договора</a></span
+            >
+          </label>
+          <button type="submit" class="btn-submit">Отправить</button>
         </form>
         <button data-close-modal class="btn-close">
-          <svg class="icon">
+          <!-- <svg class="icon">
             <use href="./img/sprite.svg#icon-close"></use>
-          </svg>
+          </svg> -->
         </button>
       </div>
     </div>
